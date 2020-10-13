@@ -16,10 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from restapi import views as restapiview
-
+from hello import views as helloview
+from board import views as boardview
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', restapiview.home, name='home'),
+    path("hello/form/", helloview.form, name="helloform"), # add
+    path("hello/template/", helloview.template, name="template"), #add
+    path("board/listwithmongo/",boardview.listwithmongo),
     # path('restapi/task/string', restapiview.taskstring, name='restapi_task_stinrg'),
     # path('restapi/task/xml', restapiview.taskxml, name='restapi_task_xml'),
     # path('restapi/task/json', restapiview.taskjson, name='restapi_task_json'),
