@@ -1,8 +1,21 @@
-<table class-"table table-striped">
-<tr> <th>title</th>  <th>links</th>  </tr>
-{% for row in page_obj.0 %}
-<tr> <td>{{row.title}}</td> <td><a href = "{{row.link}}" >{{row.link}}</td> </tr>
-{% endfor %}
-</table>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<a href="">
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>title</th>
+                <th>links</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in page_obj.0 %}
+            <tr>
+                <td>{{row.title}}</td>
+                <td> <a href="{{row.link}}"/> {{row.link}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
